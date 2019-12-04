@@ -1,11 +1,24 @@
 Package: textools
-Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Title: Tools to facilitate text analysis and NLP
+Version: 0.1
+Date: 2019-12-04
+Authors@R: c(
+    person("Robin", "Edwards", email = "geotheory1@gmail.com", role = c("aut", "cre"))
+  )
+Description: An Arsenal of 'R' functions for large-scale statistical summaries,
+  which are streamlined to work within the latest reporting tools in 'R'...
+Suggests:
+    stringr,
+    dplyr
+Depends:
+    R (>= 3.6.1),
+    stats (>= 3.2.0)
+Imports:
+    stringr,
+    dplyr
+URL: https://github.com/geotheory/textools
+BugReports: https://github.com/geotheory/textools/issues
+VignetteBuilder: knitr
+License: GPL (>= 2)
+RoxygenNote: 6.1.1
 Encoding: UTF-8
-LazyData: true
