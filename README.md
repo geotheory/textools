@@ -6,7 +6,7 @@
 
 #### %IN%
 
-Special operator to enable case-insensitive implementation of Python-style string-in-text check.
+Special operator to enable case-insensitive implementation of elegant string-in-string querying equivalent to Python's `in` operator.
 
 ```
 require(textools)

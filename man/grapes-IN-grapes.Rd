@@ -6,17 +6,28 @@
 \usage{
 q \%IN\% str
 }
+\arguments{
+\item{q}{Regex pattern or vector of patterns to match against str}
+
+\item{str}{Character value or vector to match q against}
+}
 \value{
 A logical value or vector
 }
 \description{
-The text-in operator
+A Python-style String in Text operator that ignores case.
+Shorthand for str_detect(str, regex(q, ignore_case = TRUE)).
+Either q or str must be a single value. The return is a logical value or vector if vectorised input is provided.
 }
 \examples{
-x = rownames(mtcars)
-x['merc' \%IN\% x]
-x[ gsub(' .*', '', x) \%IN\% 'We have Mazdas and Fiats in stock' ]
-x[purrr::map_lgl(x, ~ any(c('merc','fiat') \%IN\% .x))]
+'cat' \%IN\% "The Cat in a Hat"
+c('cat', 'fox') \%IN\% "The Cat in a Hat"
+'cat' \%IN\% c('The Cat in a Hat', 'Fox in Socks')
+
+require(dplyr)
+d = starwars \%>\% select(name) \%>\% as.data.frame()
+d \%>\% filter('sky' \%IN\% name)
+d \%>\% filter('[0-9]' \%IN\% name) # regex
 }
 \author{
 Robin Edwards

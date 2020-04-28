@@ -1,13 +1,9 @@
 #' Assign most common-case variants of case-insensitive clusters to all observations
 #'
-#' Where entities or themes are referenced in the data in various ways with respect to case, it is often desirable to group these together for analysis.  This function does so while preserving the most common case for prettier reading and to avoid the need for look-ups when reporting or visualising.
+#' Where names/entities/themes/tags/etc are referenced with multiple variations of upper/lower/title/mixed case, it is often desirable to group these case-insensitively for analysis.  This function does so while preserving the most common case for prettier reading and to avoid the need for subsequent look-ups.
 #'
-#' @inheritParams tibble::enframe
-#' @inheritParams dplyr::mutate
-#' @inheritParams dplyr::group_by
-#' @inheritParams dplyr::ungroup
-#' @inheritParams magrittr::`%>%`
-#' @return A logical value or vector
+#' @param x A character vector
+#' @return A character vector of same length as input, with case variants changed to the mode
 #' @examples
 #' bundle_case(c('london','London','London','Paris','PARIS','paris','Paris'))
 #' @author Robin Edwards
@@ -16,7 +12,7 @@
 
 ## Bundle case variations into most common variant
 
-bundle_case = function(x){
+bundle_case <- function(x){
   Mode <- function(v) { uv <- unique(v); uv[which.max(tabulate(match(v, uv)))]}
   tibble::enframe(x, name = NULL) %>%
     dplyr::mutate(value_lc = tolower(value)) %>%

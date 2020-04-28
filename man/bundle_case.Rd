@@ -7,14 +7,13 @@
 bundle_case(x)
 }
 \arguments{
-\item{x}{An atomic vector (for \code{enframe()}) or a data frame with one or two columns
-(for \code{deframe()}).}
+\item{x}{A character vector}
 }
 \value{
-A logical value or vector
+A character vector of same length as input, with case variants changed to the mode
 }
 \description{
-Where entities or themes are referenced in the data in various ways with respect to case, it is often desirable to group these together for analysis.  This function does so while preserving the most common case for prettier reading and to avoid the need for look-ups when reporting or visualising.
+Where names/entities/themes/tags/etc are referenced with multiple variations of upper/lower/title/mixed case, it is often desirable to group these case-insensitively for analysis.  This function does so while preserving the most common case for prettier reading and to avoid the need for subsequent look-ups.
 }
 \examples{
 bundle_case(c('london','London','London','Paris','PARIS','paris','Paris'))

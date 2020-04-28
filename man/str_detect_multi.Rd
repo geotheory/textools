@@ -7,7 +7,13 @@
 str_detect_multi(strings, patterns, ignore_case = TRUE, regex = TRUE)
 }
 \arguments{
+\item{strings}{A string or character vector of strings to query patterns against}
+
+\item{patterns}{A string or character vector of patterns to query against strings}
+
 \item{ignore_case}{Should case differences be ignored in the match?}
+
+\item{regex}{Whether patterns are regex or fixed (activates stringr::regex or stringr::fixed)}
 }
 \value{
 A logical value or vector

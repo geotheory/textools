@@ -8,8 +8,7 @@ Authors@R: c(
 Description: An Arsenal of 'R' functions for large-scale statistical summaries,
   which are streamlined to work within the latest reporting tools in 'R'...
 Suggests:
-    stringr,
-    dplyr
+    stringr
 Depends:
     R (>= 3.6.1),
     stats (>= 3.2.0)
@@ -18,7 +17,6 @@ Imports:
     dplyr
 URL: https://github.com/geotheory/textools
 BugReports: https://github.com/geotheory/textools/issues
-VignetteBuilder: knitr
 License: GPL (>= 2)
 RoxygenNote: 6.1.1
 Encoding: UTF-8
