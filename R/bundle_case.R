@@ -10,7 +10,7 @@
 #' @aliases bundle_case
 #' @export
 
-## Bundle case variations into most common variant
+## Bundle case variations into most common variant y'all
 
 bundle_case <- function(x){
   Mode <- function(v) { uv <- unique(v); uv[which.max(tabulate(match(v, uv)))]}
